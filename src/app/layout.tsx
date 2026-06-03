@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+import CosmicEngine from "@/components/CosmicEngine";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,8 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-black text-white selection:bg-white/30`}>
-        {/* We will inject the interactive 3D background behind the children later */}
+      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-transparent text-white selection:bg-white/30`}>
+        {/* The persistent 3D WebGL background */}
+        <CosmicEngine />
+        
         <main className="relative z-10 w-full min-h-screen">
           {children}
         </main>
