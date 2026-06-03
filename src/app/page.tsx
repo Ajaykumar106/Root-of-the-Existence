@@ -17,26 +17,26 @@ export default function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-4xl flex flex-col items-center"
         >
-          <div className="flex flex-col items-center justify-center mb-6">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+            <Sparkles className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium tracking-wide uppercase text-white/80">
+              Welcome to the digital museum
+            </span>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-6">
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="w-24 h-24 md:w-32 md:h-32 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(255,255,255,0.15)] border border-white/10 mb-8"
+              className="w-24 h-24 md:w-32 md:h-32 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] border border-white/10 shrink-0"
             >
               <Image src="/assets/images/app_logo.png" alt="Root of Existence Logo" width={128} height={128} className="object-cover w-full h-full" priority />
             </motion.div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              <span className="text-sm font-medium tracking-wide uppercase text-white/80">
-                Welcome to the digital museum
-              </span>
-            </div>
+            <h1 className="font-space text-5xl md:text-8xl font-bold tracking-tighter text-center md:text-left">
+              The Root of <br className="hidden md:block" />
+              <span className="text-gradient">Our Existence</span>
+            </h1>
           </div>
-          <h1 className="font-space text-6xl md:text-8xl font-bold tracking-tighter mb-6">
-            The Root of <br className="hidden md:block" />
-            <span className="text-gradient">Our Existence</span>
-          </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl font-light leading-relaxed mb-10">
             A journey through 13.8 billion years of history, explained simply. Scroll to explore the cosmos.
           </p>

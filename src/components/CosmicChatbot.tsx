@@ -56,10 +56,10 @@ export default function CosmicChatbot() {
       {/* Floating Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-900 hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(59,130,246,0.5)] ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 z-50 rounded-full bg-black border border-blue-500/50 hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.6)] overflow-hidden ${isOpen ? 'hidden' : 'flex'}`}
         aria-label="Open COSMOS AI"
       >
-        <Sparkles className="w-6 h-6 text-white" />
+        <Image src="/assets/images/ai_logo.png" alt="Ask COSMOS AI" width={64} height={64} className="object-cover" />
       </button>
 
       {/* Chat Window Modal */}
