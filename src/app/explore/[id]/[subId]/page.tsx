@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import SubModuleClient from "./SubModuleClient";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { id: string; subId: string } }): Promise<Metadata> {
-  const exhibit = MUSEUM_DATA.find((e) => e.id === params.id);
-  const subModule = exhibit?.subModules?.find((s) => s.id === params.subId);
+export async function generateMetadata({ params }: { params: Promise<{ id: string; subId: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const exhibit = MUSEUM_DATA.find((e) => e.id === resolvedParams.id);
+  const subModule = exhibit?.subModules?.find((s) => s.id === resolvedParams.subId);
   
   if (!exhibit || !subModule) {
     return { title: "Not Found | Root of Existence" };
@@ -31,9 +32,10 @@ export function generateStaticParams() {
   return params;
 }
 
-export default function SubModulePage({ params }: { params: { id: string; subId: string } }) {
-  const exhibit = MUSEUM_DATA.find((e) => e.id === params.id);
-  const subModule = exhibit?.subModules?.find((s) => s.id === params.subId);
+export default async function SubModulePage({ params }: { params: Promise<{ id: string; subId: string }> }) {
+  const resolvedParams = await params;
+  const exhibit = MUSEUM_DATA.find((e) => e.id === resolvedParams.id);
+  const subModule = exhibit?.subModules?.find((s) => s.id === resolvedParams.subId);
 
   if (!exhibit || !subModule) {
     notFound();
