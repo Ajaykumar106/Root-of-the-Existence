@@ -22,6 +22,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://root-of-the-existence.vercel.app"),
   title: "Root of Existence | The Digital Space Museum",
   description: "Explore the root of our existence. A beautifully interactive digital museum of the universe, nebulas, solar system, and humanity.",
   keywords: ["space", "museum", "universe", "astronomy", "cosmos", "big bang", "nebulas", "solar system"],
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Root of Existence | The Digital Space Museum",
     description: "Explore the root of our existence in this interactive digital museum.",
-    url: "https://cosmos.com",
+    url: "https://root-of-the-existence.vercel.app",
     siteName: "COSMOS",
     type: "website",
   },

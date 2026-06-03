@@ -43,8 +43,10 @@ export default function LiveClient() {
   // Fetch NASA APOD
   useEffect(() => {
     async function fetchApod() {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
       try {
-        const res = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+        const res = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", { signal: controller.signal });
         if (!res.ok) throw new Error("NASA API limit reached or unavailable.");
         const data = await res.json();
         setApod(data);
@@ -59,6 +61,7 @@ export default function LiveClient() {
           date: new Date().toISOString().split('T')[0]
         });
       } finally {
+        clearTimeout(timeoutId);
         setApodLoading(false);
       }
     }
@@ -68,8 +71,10 @@ export default function LiveClient() {
   // Fetch Upcoming Launches (Space Devs Dev API)
   useEffect(() => {
     async function fetchLaunches() {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
       try {
-        const res = await fetch("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=5");
+        const res = await fetch("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=5", { signal: controller.signal });
         if (!res.ok) throw new Error("Launch API rate limit reached.");
         const data = await res.json();
         
@@ -94,6 +99,7 @@ export default function LiveClient() {
       } catch (err) {
         setLaunchesError(true);
       } finally {
+        clearTimeout(timeoutId);
         setLaunchesLoading(false);
       }
     }

@@ -12,9 +12,25 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return { title: "Not Found | Root of Existence" };
   }
 
+  // Create a highly unique meta description for SEO
+  const componentsList = subModule.components.map(c => c.label).join(", ");
+  const description = `${subModule.title} explained - Deep dive into ${componentsList}. ${subModule.description}`;
+
   return {
     title: `${subModule.title} | ${exhibit.title} | Root of Existence`,
-    description: subModule.description,
+    description: description,
+    openGraph: {
+      title: `${subModule.title} | ${exhibit.title}`,
+      description: description,
+      images: [subModule.imagePath],
+      url: `https://root-of-the-existence.vercel.app/explore/${exhibit.id}/${subModule.id}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${subModule.title} | Root of Existence`,
+      description: description,
+      images: [subModule.imagePath],
+    }
   };
 }
 
@@ -41,5 +57,31 @@ export default async function SubModulePage({ params }: { params: Promise<{ id: 
     notFound();
   }
 
-  return <SubModuleClient exhibit={exhibit} subModule={subModule} />;
+  // Generate JSON-LD Structured Data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    name: subModule.title,
+    headline: subModule.title,
+    description: subModule.description,
+    image: `https://root-of-the-existence.vercel.app${subModule.imagePath}`,
+    author: {
+      "@type": "Organization",
+      name: "Root of Existence Museum"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Root of Existence"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SubModuleClient exhibit={exhibit} subModule={subModule} />
+    </>
+  );
 }
