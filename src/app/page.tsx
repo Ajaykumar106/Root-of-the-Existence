@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MUSEUM_DATA } from "@/lib/museum";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Satellite } from "lucide-react";
 
 export default function Home() {
   return (
@@ -27,9 +27,17 @@ export default function Home() {
             The Root of <br className="hidden md:block" />
             <span className="text-gradient">Our Existence</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/60 max-w-2xl font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/60 max-w-2xl font-light leading-relaxed mb-10">
             A journey through 13.8 billion years of history, explained simply. Scroll to explore the cosmos.
           </p>
+          
+          <Link 
+            href="/live"
+            className="flex items-center gap-3 px-8 py-4 bg-white text-black hover:bg-white/90 rounded-full font-space font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+          >
+            <Satellite className="w-5 h-5" />
+            Live Telemetry Dash
+          </Link>
         </motion.div>
 
         {/* Scroll Indicator */}
