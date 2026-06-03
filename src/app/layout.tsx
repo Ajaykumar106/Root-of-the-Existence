@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 };
 
 import CosmicEngine from "@/components/CosmicEngine";
+import GlobalSearch from "@/components/GlobalSearch";
 
 export default function RootLayout({
   children,
@@ -52,6 +53,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-transparent text-white selection:bg-white/30`}>
         {/* The persistent 3D WebGL background */}
         <CosmicEngine />
+        
+        {/* The persistent Command Palette Search UI */}
+        <GlobalSearch />
         
         <main className="relative z-10 w-full min-h-screen">
           {children}
