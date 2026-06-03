@@ -34,7 +34,11 @@ export const humanityExhibit: MuseumExhibit = {
       imagePath: "/assets/images/earth.png",
       past: "Life survived five massive global extinction events, including the asteroid impact 66 million years ago that wiped out the dinosaurs and allowed mammals to rise.",
       present: "Humans (Homo sapiens) are currently the dominant apex species on Earth, possessing unique high-level intelligence and complex language.",
-      future: "With the advent of genetic engineering (CRISPR) and neural interfaces, humanity is on the verge of taking control of its own biological evolution (Transhumanism)."
+      future: "With the advent of genetic engineering (CRISPR) and neural interfaces, humanity is on the verge of taking control of its own biological evolution (Transhumanism).",
+      citations: [
+        { title: "Human Evolution", url: "https://humanorigins.si.edu/", source: "Smithsonian" },
+        { title: "Evolution of Life on Earth", url: "https://en.wikipedia.org/wiki/Evolutionary_history_of_life", source: "Wikipedia" }
+      ]
     },
     {
       id: "technology",
@@ -47,7 +51,11 @@ export const humanityExhibit: MuseumExhibit = {
       imagePath: "/assets/images/space_colony.png",
       past: "It took hundreds of thousands of years to go from stone tools to the steam engine, but only 66 years to go from the first airplane flight to landing on the Moon.",
       present: "We are living in an era of exponential technological growth, driven by the internet, global connectivity, and the rapid development of Artificial Intelligence.",
-      future: "Many futurists predict a 'Technological Singularity' in the 21st century—a point where artificial intelligence surpasses human intelligence, leading to an unpredictable explosion in technological advancement."
+      future: "Many futurists predict a 'Technological Singularity' in the 21st century—a point where artificial intelligence surpasses human intelligence, leading to an unpredictable explosion in technological advancement.",
+      citations: [
+        { title: "Technological Singularity", url: "https://en.wikipedia.org/wiki/Technological_singularity", source: "Wikipedia" },
+        { title: "Moore's Law", url: "https://www.intel.com/content/www/us/en/newsroom/resources/moores-law.html", source: "Intel" }
+      ]
     }
   ]
 };

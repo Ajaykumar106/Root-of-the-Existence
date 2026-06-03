@@ -7,6 +7,7 @@ export interface SubModule {
   past: string;
   present: string;
   future: string;
+  citations: { title: string; url: string; source: string }[];
 }
 
 export interface MuseumExhibit {

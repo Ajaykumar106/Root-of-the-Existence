@@ -3,7 +3,7 @@
 import { MuseumExhibit } from "@/lib/museum";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Clock, Atom, BookOpen, Layers, Rocket, History, Activity } from "lucide-react";
+import { ArrowLeft, Clock, Atom, BookOpen, Layers, Rocket, History, Activity, ArrowRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const staggerContainer: Variants = {
@@ -225,6 +225,16 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
                       </div>
                       <p className="text-white/70 text-sm leading-relaxed">{sub.future}</p>
                     </div>
+                  </div>
+
+                  <div className="mt-10">
+                    <Link 
+                      href={`/explore/${exhibit.id}/${sub.id}`}
+                      className="flex items-center justify-center gap-3 w-full py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/50 rounded-xl font-space font-bold uppercase tracking-widest transition-all group"
+                    >
+                      Deep Dive Research File
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                    </Link>
                   </div>
 
                 </div>

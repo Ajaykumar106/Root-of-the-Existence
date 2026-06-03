@@ -34,7 +34,11 @@ export const originsExhibit: MuseumExhibit = {
       imagePath: "/assets/images/big_bang.png",
       past: "Prior to this epoch, the concepts of space and time do not apply. This is the absolute beginning of the chronological universe.",
       present: "Physicists are currently trying to unify General Relativity (gravity) and Quantum Mechanics to understand what actually happened during this epoch.",
-      future: "The ultimate goal of modern theoretical physics is to formulate a 'Theory of Everything' (like String Theory) to mathematically prove the conditions of the Planck Epoch."
+      future: "The ultimate goal of modern theoretical physics is to formulate a 'Theory of Everything' (like String Theory) to mathematically prove the conditions of the Planck Epoch.",
+      citations: [
+        { title: "The Planck Epoch", url: "https://en.wikipedia.org/wiki/Planck_epoch", source: "Wikipedia" },
+        { title: "Brief History of the Universe", url: "https://science.nasa.gov/astrophysics/focus-areas/what-powered-the-big-bang", source: "NASA Astrophysics" }
+      ]
     },
     {
       id: "recombination",
@@ -47,7 +51,11 @@ export const originsExhibit: MuseumExhibit = {
       imagePath: "/assets/images/stellar_nebula.png",
       past: "Before this, the universe was an opaque plasma of free-floating electrons and protons that trapped light. When it cooled, light was finally released, creating the CMB.",
       present: "The 'afterglow' of this event, the Cosmic Microwave Background (CMB), is still visible everywhere in the universe today in the microwave spectrum.",
-      future: "Radio telescopes are mapping the minute temperature fluctuations in the CMB to precisely measure the amount of Dark Matter and Dark Energy in the universe."
+      future: "Radio telescopes are mapping the minute temperature fluctuations in the CMB to precisely measure the amount of Dark Matter and Dark Energy in the universe.",
+      citations: [
+        { title: "Cosmic Microwave Background", url: "https://science.nasa.gov/astrophysics/focus-areas/what-is-the-universe-made-of", source: "NASA Science" },
+        { title: "Recombination (Cosmology)", url: "https://en.wikipedia.org/wiki/Recombination_(cosmology)", source: "Wikipedia" }
+      ]
     }
   ]
 };
@@ -86,7 +94,11 @@ export const nebulasExhibit: MuseumExhibit = {
       imagePath: "/assets/images/stellar_nebula.png",
       past: "Observed by ancient civilizations, but its true nature as a cloud of gas was only confirmed by telescopes in the 17th century.",
       present: "The James Webb Space Telescope recently captured unprecedented images of the Orion Nebula, revealing protoplanetary disks (baby solar systems) forming around young stars.",
-      future: "Over millions of years, the radiation from its massive newly-formed stars will eventually blow the gas cloud away, leaving behind a new open star cluster."
+      future: "Over millions of years, the radiation from its massive newly-formed stars will eventually blow the gas cloud away, leaving behind a new open star cluster.",
+      citations: [
+        { title: "The Orion Nebula", url: "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-42/", source: "NASA Hubble" },
+        { title: "Webb Observations of Orion", url: "https://webbtelescope.org/contents/news-releases/2023/news-2023-112", source: "STScI" }
+      ]
     }
   ]
 };

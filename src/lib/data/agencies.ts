@@ -34,7 +34,11 @@ export const agenciesExhibit: MuseumExhibit = {
       imagePath: "/assets/images/space_colony.png",
       past: "Achieved the greatest technological feat in human history in 1969 by landing Apollo 11 on the Moon. Launched Voyager 1, the first human object to leave the solar system.",
       present: "Operating the James Webb Space Telescope, redefining our view of the early universe, and flying the Ingenuity helicopter on Mars.",
-      future: "The Artemis Program aims to establish the Lunar Gateway station and a permanent human base camp on the Moon's South Pole to prepare for the leap to Mars in the late 2030s."
+      future: "The Artemis Program aims to establish the Lunar Gateway station and a permanent human base camp on the Moon's South Pole to prepare for the leap to Mars in the late 2030s.",
+      citations: [
+        { title: "NASA Artemis Program", url: "https://www.nasa.gov/specials/artemis/", source: "NASA" },
+        { title: "James Webb Space Telescope", url: "https://webbtelescope.org/", source: "STScI" }
+      ]
     },
     {
       id: "isro",
@@ -47,7 +51,11 @@ export const agenciesExhibit: MuseumExhibit = {
       imagePath: "/assets/images/isro.png",
       past: "Successfully put the Mangalyaan orbiter into Mars orbit on its very first attempt in 2014, for a fraction of the cost of a Hollywood movie.",
       present: "Made global history with Chandrayaan-3 in 2023 by becoming the first nation to successfully land a rover near the Moon's rugged, water-rich South Pole.",
-      future: "Developing the Gaganyaan mission to launch Indian astronauts into space autonomously, and planning Shukrayaan to orbit and study Venus."
+      future: "Developing the Gaganyaan mission to launch Indian astronauts into space autonomously, and planning Shukrayaan to orbit and study Venus.",
+      citations: [
+        { title: "ISRO Official Website", url: "https://www.isro.gov.in/", source: "ISRO" },
+        { title: "Chandrayaan-3 Mission", url: "https://www.isro.gov.in/Chandrayaan3.html", source: "ISRO" }
+      ]
     },
     {
       id: "spacex",
@@ -60,7 +68,11 @@ export const agenciesExhibit: MuseumExhibit = {
       imagePath: "/assets/images/human_exploration.png",
       past: "Broke the government monopoly on spaceflight. Became the first private company to land a booster rocket vertically and send humans to the ISS via Crew Dragon.",
       present: "Dominating global launch markets with the Falcon 9. Currently rapidly prototyping and test-launching Starship, the largest and most powerful rocket ever built.",
-      future: "The singular goal of SpaceX is to make life multi-planetary by building a self-sustaining city of one million people on Mars within our lifetimes."
+      future: "The singular goal of SpaceX is to make life multi-planetary by building a self-sustaining city of one million people on Mars within our lifetimes.",
+      citations: [
+        { title: "SpaceX Starship", url: "https://www.spacex.com/vehicles/starship/", source: "SpaceX" },
+        { title: "Mars Architecture", url: "https://www.spacex.com/human-spaceflight/mars/", source: "SpaceX" }
+      ]
     },
     {
       id: "esa",
@@ -73,7 +85,11 @@ export const agenciesExhibit: MuseumExhibit = {
       imagePath: "/assets/images/earth.png",
       past: "Achieved the impossible in 2014 by landing the Philae probe directly onto a speeding comet (Comet 67P) during the Rosetta mission.",
       present: "Launched the Jupiter Icy Moons Explorer (JUICE) in 2023 to spend years traveling to the Jovian system to investigate Europa, Callisto, and Ganymede.",
-      future: "Collaborating with NASA on the Mars Sample Return mission to bring Martian soil back to Earth, and developing the LISA observatory to detect gravitational waves from space."
+      future: "Collaborating with NASA on the Mars Sample Return mission to bring Martian soil back to Earth, and developing the LISA observatory to detect gravitational waves from space.",
+      citations: [
+        { title: "ESA Official Website", url: "https://www.esa.int/", source: "ESA" },
+        { title: "JUICE Mission", url: "https://www.esa.int/Science_Exploration/Space_Science/Juice", source: "ESA" }
+      ]
     }
   ]
 };
