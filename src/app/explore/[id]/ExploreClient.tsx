@@ -202,7 +202,7 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
                         <History className="w-3 h-3 text-slate-400" />
                         <span className="text-xs font-space text-slate-400 uppercase tracking-widest block">History (Past)</span>
                       </div>
-                      <p className="text-white/60 text-sm leading-relaxed">{sub.past}</p>
+                      <p className="text-white/60 text-sm leading-relaxed line-clamp-3">{sub.past}</p>
                     </div>
 
                     {/* PRESENT */}
@@ -213,7 +213,7 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
                         <Activity className="w-3 h-3 text-blue-400" />
                         <span className="text-xs font-space text-blue-400 uppercase tracking-widest block">Live Status (Present)</span>
                       </div>
-                      <p className="text-white/80 text-sm leading-relaxed font-medium">{sub.present}</p>
+                      <p className="text-white/80 text-sm leading-relaxed font-medium line-clamp-3">{sub.present}</p>
                     </div>
 
                     {/* FUTURE */}
@@ -223,7 +223,7 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
                         <Rocket className="w-3 h-3 text-amber-500" />
                         <span className="text-xs font-space text-amber-500 uppercase tracking-widest block">Next Steps (Future)</span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed">{sub.future}</p>
+                      <p className="text-white/70 text-sm leading-relaxed line-clamp-3">{sub.future}</p>
                     </div>
                   </div>
 
