@@ -223,11 +223,8 @@ export default function LiveClient() {
               launches.map((launch) => {
                 const launchDate = new Date(launch.net);
                 return (
-                  <a 
+                  <div 
                     key={launch.id} 
-                    href={`https://thespacedevs.com/ll/${launch.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="glass-card p-6 flex flex-col md:flex-row gap-6 items-start md:items-center hover:bg-white/5 hover:border-blue-400/50 transition-all group"
                   >
                     
@@ -281,7 +278,7 @@ export default function LiveClient() {
                        </span>
                     </div>
 
-                  </a>
+                  </div>
                 );
               })
             )}
