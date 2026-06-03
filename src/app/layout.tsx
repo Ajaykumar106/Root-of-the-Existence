@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 
 import CosmicEngine from "@/components/CosmicEngine";
 import GlobalSearch from "@/components/GlobalSearch";
+import CosmicChatbot from "@/components/CosmicChatbot";
 
 export default function RootLayout({
   children,
@@ -57,6 +58,9 @@ export default function RootLayout({
         
         {/* The persistent Command Palette Search UI */}
         <GlobalSearch />
+        
+        {/* Floating AI Chatbot */}
+        <CosmicChatbot />
         
         <main className="relative z-10 w-full min-h-screen">
           {children}
