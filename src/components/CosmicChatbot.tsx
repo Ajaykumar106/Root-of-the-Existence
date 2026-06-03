@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Bot, User, Send, X, Sparkles } from "lucide-react";
+import { User, Send, X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 type ChatMessage = { role: "user" | "ai"; text: string };
 
@@ -74,8 +75,8 @@ export default function CosmicChatbot() {
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-white/10 bg-gradient-to-r from-blue-900/40 to-transparent shrink-0">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                  <Bot className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 rounded-full bg-black border border-blue-500/50 flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                  <Image src="/assets/images/ai_logo.png" alt="COSMOS AI" width={40} height={40} className="object-cover" />
                 </div>
                 <div>
                   <h3 className="font-space font-bold text-white text-sm">COSMOS AI</h3>
@@ -105,8 +106,8 @@ export default function CosmicChatbot() {
               
               {chatHistory.map((msg, i) => (
                 <div key={i} className={`flex gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1 ${msg.role === "user" ? "bg-white/10" : "bg-blue-500/20 border border-blue-500/30"}`}>
-                    {msg.role === "user" ? <User className="w-3 h-3 text-white" /> : <Bot className="w-3 h-3 text-blue-400" />}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1 overflow-hidden ${msg.role === "user" ? "bg-white/10" : "bg-black border border-blue-500/30"}`}>
+                    {msg.role === "user" ? <User className="w-4 h-4 text-white" /> : <Image src="/assets/images/ai_logo.png" alt="AI" width={32} height={32} className="object-cover" />}
                   </div>
                   <div className={`p-3 rounded-2xl max-w-[85%] ${msg.role === "user" ? "bg-white/10 text-white rounded-tr-sm" : "bg-blue-500/10 text-blue-100 border border-blue-500/20 rounded-tl-sm leading-relaxed"}`}>
                     <p className="whitespace-pre-wrap text-sm">{msg.text}</p>
@@ -116,8 +117,8 @@ export default function CosmicChatbot() {
               
               {isTyping && (
                 <div className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center shrink-0 mt-1">
-                    <Bot className="w-3 h-3 text-blue-400" />
+                  <div className="w-8 h-8 rounded-full bg-black border border-blue-500/30 flex items-center justify-center shrink-0 mt-1 overflow-hidden">
+                    <Image src="/assets/images/ai_logo.png" alt="AI" width={32} height={32} className="object-cover" />
                   </div>
                   <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-500/20 rounded-tl-sm flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
