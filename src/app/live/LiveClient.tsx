@@ -223,9 +223,12 @@ export default function LiveClient() {
               launches.map((launch) => {
                 const launchDate = new Date(launch.net);
                 return (
-                  <div 
+                  <a 
                     key={launch.id} 
-                    className="glass-card p-6 flex flex-col md:flex-row gap-6 items-start md:items-center hover:bg-white/5 hover:border-blue-400/50 transition-all group"
+                    href={`https://www.google.com/search?q=${encodeURIComponent(launch.name + " space launch")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-card p-6 flex flex-col md:flex-row gap-6 items-start md:items-center hover:bg-white/5 hover:border-blue-400/50 transition-all group cursor-pointer"
                   >
                     
                     {/* Visual / Image */}
@@ -278,7 +281,7 @@ export default function LiveClient() {
                        </span>
                     </div>
 
-                  </div>
+                  </a>
                 );
               })
             )}
