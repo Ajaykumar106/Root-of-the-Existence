@@ -6,7 +6,11 @@ export interface MuseumExhibit {
   description: string;
   simpleExplanation: string;
   metrics: { label: string; value: string }[];
-  imagePath?: string;
+  imagePath: string;
+  // Deep Research Data
+  timeline: { year: string; event: string }[];
+  physics: { concept: string; detail: string }[];
+  deepLore: string;
 }
 
 export const MUSEUM_DATA: MuseumExhibit[] = [
@@ -21,7 +25,17 @@ export const MUSEUM_DATA: MuseumExhibit[] = [
       { label: "AGE", value: "13.8 Billion Years" },
       { label: "TEMPERATURE", value: "Billions of Degrees" }
     ],
-    imagePath: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop"
+    imagePath: "/assets/images/big_bang.png",
+    timeline: [
+      { year: "10^-43 Seconds", event: "The Planck Epoch. The laws of physics as we know them begin to take shape." },
+      { year: "10^-32 Seconds", event: "Cosmic Inflation. The universe expands faster than the speed of light." },
+      { year: "380,000 Years", event: "Recombination. The first atoms form, and light can finally travel freely (Cosmic Microwave Background)." }
+    ],
+    physics: [
+      { concept: "Singularity", detail: "A point of infinite density and temperature where the math of general relativity breaks down." },
+      { concept: "Expansion", detail: "Space itself is stretching, carrying galaxies away from each other, driven by Dark Energy." }
+    ],
+    deepLore: "Before the Big Bang, the concept of 'before' might not even make sense. Time itself was created in this event. Every atom that makes up your body, the screen you are reading this on, and the stars in the night sky originated from this single, microscopic, intensely hot point. We are living inside the aftermath of the greatest event in history."
   },
   {
     id: "nebulas",
@@ -34,7 +48,17 @@ export const MUSEUM_DATA: MuseumExhibit[] = [
       { label: "SIZE", value: "Up to 100 Light Years" },
       { label: "COMPOSITION", value: "Hydrogen & Dust" }
     ],
-    imagePath: "https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2000&auto=format&fit=crop"
+    imagePath: "/assets/images/stellar_nebula.png",
+    timeline: [
+      { year: "Stage 1", event: "Gravity begins to pull cold cosmic dust and gas together into a dense pocket." },
+      { year: "Stage 2", event: "A protostar forms at the center, glowing with heat but not yet undergoing fusion." },
+      { year: "Stage 3", event: "Nuclear fusion ignites. The star's solar winds blow the remaining nebula gas away, revealing the new star system." }
+    ],
+    physics: [
+      { concept: "Emission Spectra", detail: "Different gases glow in different colors when hit by starlight. Hydrogen glows red; oxygen glows blue/green." },
+      { concept: "Gravitational Collapse", detail: "The delicate balance between the inward pull of gravity and the outward push of thermal pressure." }
+    ],
+    deepLore: "When you look at a nebula, you are looking at the raw material of creation. The Pillars of Creation in the Eagle Nebula are light-years tall, towering columns of cold gas. Inside them, thousands of new solar systems are slowly gestating in the dark. It is the ultimate recycling program of the universe: old stars die and explode, providing the heavy elements for nebulas to forge new stars."
   },
   {
     id: "solar-system",
@@ -47,7 +71,17 @@ export const MUSEUM_DATA: MuseumExhibit[] = [
       { label: "STAR", value: "The Sun" },
       { label: "PLANETS", value: "8 Major Planets" }
     ],
-    imagePath: "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=2000&auto=format&fit=crop"
+    imagePath: "/assets/images/solar_system.png",
+    timeline: [
+      { year: "4.6 Billion Years Ago", event: "The solar nebula collapses to form the Sun." },
+      { year: "4.5 Billion Years Ago", event: "The Earth forms from the accretion disk of dust swirling around the young Sun." },
+      { year: "4.5 Billion Years Ago (Late)", event: "A Mars-sized object collides with Earth, creating the debris ring that forms our Moon." }
+    ],
+    physics: [
+      { concept: "Orbital Mechanics", detail: "Planets are essentially in a state of constant free-fall toward the Sun, moving sideways fast enough to keep missing it." },
+      { concept: "Heliopause", detail: "The boundary where the Sun's solar wind is finally stopped by the interstellar medium of the galaxy." }
+    ],
+    deepLore: "The Solar System is our island in a vast, dark ocean. From the scorching, lead-melting surface of Venus, to the massive, raging storms on Jupiter that have lasted for centuries, to the freezing methane lakes of Titan, our tiny neighborhood contains an incredible diversity of worlds. And right in the goldilocks zone, perfectly positioned, is a pale blue dot where life took hold."
   },
   {
     id: "humanity",
@@ -60,6 +94,17 @@ export const MUSEUM_DATA: MuseumExhibit[] = [
       { label: "ORIGIN", value: "Earth" },
       { label: "STATUS", value: "Space-faring" }
     ],
-    imagePath: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop"
+    imagePath: "/assets/images/human_exploration.png",
+    timeline: [
+      { year: "3.5 Billion Years Ago", event: "The first single-celled life appears in Earth's oceans." },
+      { year: "300,000 Years Ago", event: "Homo sapiens (modern humans) emerge in Africa." },
+      { year: "1969 CE", event: "Apollo 11. Humans walk on another celestial body for the first time." },
+      { year: "Present", event: "Humanity expands its reach, aiming for Mars and establishing a permanent presence in low Earth orbit." }
+    ],
+    physics: [
+      { concept: "Carbon-Based Life", detail: "Carbon's unique ability to form four stable bonds allows it to build the complex molecules (DNA/RNA) necessary for life." },
+      { concept: "Consciousness", detail: "The still-unsolved phenomenon of how physical matter (the brain) generates subjective experience." }
+    ],
+    deepLore: "We are the universe waking up. For billions of years, the cosmos was silent, running purely on blind physics and chemistry. Then, through an impossibly long chain of evolutionary survival, matter became conscious. When an astronomer looks through a telescope, it is the universe looking at itself. Our curiosity is the universe trying to understand its own existence."
   }
 ];

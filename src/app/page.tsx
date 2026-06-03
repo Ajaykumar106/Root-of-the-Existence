@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MUSEUM_DATA } from "@/lib/museum";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
@@ -96,10 +97,13 @@ export default function Home() {
                 ))}
               </div>
 
-              <button className="flex items-center gap-3 w-fit text-sm font-space tracking-widest uppercase group hover:text-blue-400 transition-colors">
+              <Link 
+                href={`/explore/${exhibit.id}`}
+                className="flex items-center gap-3 w-fit text-sm font-space tracking-widest uppercase group hover:text-blue-400 transition-colors"
+              >
                 Explore Deeper
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </button>
+              </Link>
             </div>
           </motion.div>
         ))}

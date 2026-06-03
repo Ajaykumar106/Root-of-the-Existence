@@ -22,12 +22,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "COSMOS | The Digital Space Museum",
+  title: "Root of Existence | The Digital Space Museum",
   description: "Explore the root of our existence. A beautifully interactive digital museum of the universe, nebulas, solar system, and humanity.",
   keywords: ["space", "museum", "universe", "astronomy", "cosmos", "big bang", "nebulas", "solar system"],
   authors: [{ name: "Space Engineers" }],
   openGraph: {
-    title: "COSMOS | The Digital Space Museum",
+    title: "Root of Existence | The Digital Space Museum",
     description: "Explore the root of our existence in this interactive digital museum.",
     url: "https://cosmos.com",
     siteName: "COSMOS",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "COSMOS | The Digital Space Museum",
+    title: "Root of Existence | The Digital Space Museum",
     description: "Explore the root of our existence in this interactive digital museum.",
   },
 };
