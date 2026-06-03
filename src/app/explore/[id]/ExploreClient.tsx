@@ -3,7 +3,7 @@
 import { MuseumExhibit } from "@/lib/museum";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Clock, Atom, BookOpen, Layers } from "lucide-react";
+import { ArrowLeft, Clock, Atom, BookOpen, Layers, Rocket, History, Activity } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const staggerContainer: Variants = {
@@ -146,7 +146,7 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
         </div>
       </motion.section>
 
-      {/* Sub-Modules Carousel (For Solar System, Future of Space, etc.) */}
+      {/* Exhaustive Sub-Modules Grid */}
       {exhibit.subModules && exhibit.subModules.length > 0 && (
         <motion.section 
           initial={{ opacity: 0, y: 50 }}
@@ -155,46 +155,78 @@ export default function ExploreClient({ exhibit }: { exhibit: MuseumExhibit }) {
           transition={{ duration: 1 }}
           className="max-w-7xl mx-auto px-6 mt-32"
         >
-          <div className="flex items-center gap-3 mb-12">
+          <div className="flex items-center gap-3 mb-12 border-b border-white/10 pb-6">
             <Layers className="w-8 h-8 text-blue-400" />
-            <h3 className="font-space text-4xl font-bold">Detailed Research</h3>
+            <h3 className="font-space text-4xl font-bold">Exhaustive Database</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {exhibit.subModules.map((sub, idx) => (
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+            {exhibit.subModules.map((sub) => (
               <motion.div 
                 key={sub.id}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -5 }}
                 className="flex flex-col glass-panel overflow-hidden group"
               >
                 {/* Sub-Module Hero */}
-                <div className="relative w-full h-64 overflow-hidden">
+                <div className="relative w-full h-72 overflow-hidden">
                   <Image 
                     src={sub.imagePath} 
                     alt={sub.title} 
                     fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 mix-blend-screen" 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-screen" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-                  <h4 className="absolute bottom-6 left-6 font-space text-3xl font-bold text-white z-10">{sub.title}</h4>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <h4 className="absolute bottom-6 left-8 font-space text-4xl font-bold text-white z-10">{sub.title}</h4>
                 </div>
                 
                 <div className="p-8 flex flex-col flex-grow">
-                  <p className="text-white/70 text-sm leading-relaxed mb-8">{sub.description}</p>
+                  <p className="text-white/80 text-base leading-relaxed mb-8">{sub.description}</p>
                   
+                  {/* Components */}
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     {sub.components.map((comp, i) => (
-                      <div key={i} className="glass-card p-4">
-                        <span className="text-[10px] text-white/40 uppercase tracking-widest block mb-1">{comp.label}</span>
+                      <div key={i} className="glass-card p-4 border border-white/5">
+                        <span className="text-[10px] text-blue-400 uppercase tracking-widest block mb-1">{comp.label}</span>
                         <span className="font-space text-sm font-semibold">{comp.value}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-auto border-t border-white/10 pt-6">
-                    <span className="text-[10px] text-blue-400 uppercase tracking-widest block mb-2">Current Research Progress</span>
-                    <p className="text-white/60 text-xs leading-relaxed">{sub.researchProgress}</p>
+                  {/* Temporal Flow: Past, Present, Future */}
+                  <div className="mt-auto flex flex-col gap-6">
+                    {/* PAST */}
+                    <div className="relative pl-8">
+                      <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-slate-500 border-4 border-black" />
+                      <div className="absolute left-[7px] top-5 w-[2px] h-[calc(100%+8px)] bg-white/10" />
+                      <div className="flex items-center gap-2 mb-1">
+                        <History className="w-3 h-3 text-slate-400" />
+                        <span className="text-xs font-space text-slate-400 uppercase tracking-widest block">History (Past)</span>
+                      </div>
+                      <p className="text-white/60 text-sm leading-relaxed">{sub.past}</p>
+                    </div>
+
+                    {/* PRESENT */}
+                    <div className="relative pl-8">
+                      <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6] border-4 border-black z-10" />
+                      <div className="absolute left-[7px] top-5 w-[2px] h-[calc(100%+8px)] bg-white/10" />
+                      <div className="flex items-center gap-2 mb-1">
+                        <Activity className="w-3 h-3 text-blue-400" />
+                        <span className="text-xs font-space text-blue-400 uppercase tracking-widest block">Live Status (Present)</span>
+                      </div>
+                      <p className="text-white/80 text-sm leading-relaxed font-medium">{sub.present}</p>
+                    </div>
+
+                    {/* FUTURE */}
+                    <div className="relative pl-8">
+                      <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-black z-10" />
+                      <div className="flex items-center gap-2 mb-1">
+                        <Rocket className="w-3 h-3 text-amber-500" />
+                        <span className="text-xs font-space text-amber-500 uppercase tracking-widest block">Next Steps (Future)</span>
+                      </div>
+                      <p className="text-white/70 text-sm leading-relaxed">{sub.future}</p>
+                    </div>
                   </div>
+
                 </div>
               </motion.div>
             ))}
