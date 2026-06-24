@@ -41,10 +41,6 @@ export const metadata: Metadata = {
   },
 };
 
-import CosmicEngine from "@/components/CosmicEngine";
-import GlobalSearch from "@/components/GlobalSearch";
-import CosmicChatbot from "@/components/CosmicChatbot";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,15 +49,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-transparent text-white selection:bg-white/30`}>
-        {/* The persistent 3D WebGL background */}
-        <CosmicEngine />
-        
-        {/* The persistent Command Palette Search UI */}
-        <GlobalSearch />
-        
-        {/* Floating AI Chatbot */}
-        <CosmicChatbot />
-        
         <main className="relative z-10 w-full min-h-screen">
           {children}
         </main>
