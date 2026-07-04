@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large files
+*.zip
+old_version_extracted/
+stitch_design/
+rootx-logo.png.png
